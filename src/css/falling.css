@@ -1,31 +1,45 @@
+body{
+  background-color: white;
+  color:black;
+  
+}
 
-.dot{
-    width:35px;
-    height:35px;
-    position:absolute;
-    background: url(https://upload.wikimedia.org/wikipedia/commons/f/f1/Heart_coraz%C3%B3n.svg);
-    background-size: 100% 100%;
-  }
-  .dot2{
-    width:35px;
-    height:35px;
-    position:absolute;
-    background: url(https://upload.wikimedia.org/wikipedia/commons/f/f1/Heart_coraz%C3%B3n.svg);
-    background-size: 100% 100%;
-  }
-  .dot3{
-    width:35px;
-    height:35px;
-    position:absolute;
-    background: url(https://upload.wikimedia.org/wikipedia/commons/f/f1/Heart_coraz%C3%B3n.svg);
-    background-size: 100% 100%;
-  }
-  html, body, #container {width:100%; height:100%; }
-  #logo{ left:50%; top:50%; position:absolute; border-radius:10px; }
-  
-  
-  
-  #DiacoDesignLink,#pens{
-    color: #fff;
-  }
-  
+.dot {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/f/f1/Heart_coraz%C3%B3n.svg);
+  background-size: 100% 100%;
+}
+.dot2 {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/f/f1/Heart_coraz%C3%B3n.svg);
+  background-size: 100% 100%;
+}
+.dot3 {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/f/f1/Heart_coraz%C3%B3n.svg);
+  background-size: 100% 100%;
+}
+html,
+body,
+#container {
+  width: 100%;
+  height: 100%;
+  overflow:hidden;
+}
+#logo {
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  border-radius: 10px;
+}
+
+#DiacoDesignLink,
+#pens {
+  color: #fff;
+}
