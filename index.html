@@ -43,7 +43,7 @@
 							style="padding: .91rem 1.25rem; background: transparent;">
 							<div class="badge bg-success float-right">5</div>
 							<div class="d-flex align-items-start">
-								<img src="./assets/image/anhdaidien.jpg" class="rounded-circle mr-1"
+								<img src="./assets/image/avaright.png" class="rounded-circle mr-1"
 									alt="Vanessa Tucker" width="40" height="40">
 								<div class="flex-grow-1 ml-3">
 									Boy BeONE
@@ -63,12 +63,12 @@
 							<div class="d-flex align-items-center py-1">
 								<!-- Title Room Chat -->
 								<div class="position-relative">
-									<img src="./assets/image/anhdaidien.jpg" class="rounded-circle mr-1" alt="Boy BeONE"
+									<img src="./assets/image/avaright.png" class="rounded-circle mr-1" alt="Boy BeONE"
 										width="40" height="40">
 								</div>
 								<div class="flex-grow-1 pl-3">
 									<strong>Boy BeONE</strong>
-									<div class="text-muted small"><em>La la la</em></div>
+									<div class="text-muted small"><em>Online</em></div>
 								</div>
 								<!-- End Title Room chat -->
 
@@ -170,7 +170,7 @@
 
 						<!-- Send Room chat -->
 						<div class="flex-grow-0 border-top ">
-							<div class="input-group pt-2 d-flex flex-row-reverse" id="group-answer">
+							<div class="input-group pt-2 d-flex justify-content-end" id="group-answer">
 
 								<!-- <button class="answer btn btn-outline-info mb-2 mx-1" onclick="selectAnswer(0)">Lorem
 									iet te
@@ -303,8 +303,11 @@
 
 	<script type="text/javascript">
 		//url
-		const urlAvatarRight = "./assets/image/anhdaidien.jpg";
-		const urlAvatarLeft = "./assets/image/anhdaidien.jpg";
+		const urlAvatarRight = "./assets/image/avaright.png";
+		const urlAvatarLeft = "./assets/image/avaleft1.jfif";
+
+		//key
+		var keyState = "";
 
 		scrollBottom();
 		//setFallingContailer();
@@ -343,6 +346,16 @@
 			let quiz = quizs[indexQuizs];
 
 			let messages = [];
+
+			//set Key 
+			if(indexQuizs == 0){
+				if(keyAnswer == 0){
+					keyState = "keyend1";
+				}
+				else if(keyAnswer == 1){
+					keyState = "keyend2";
+				}
+			}
 
 			for (const key in quiz.afterAnswers) {
 				if (Object.hasOwnProperty.call(quiz.afterAnswers, key)) {
@@ -423,7 +436,7 @@
 				}
 				else {
 					if (key == 0) {
-						durationMessage = durationMessage + 1000;
+						durationMessage = durationMessage + 2000;
 					}
 					tempImgDiv = imgDivNone;
 				}
@@ -431,7 +444,7 @@
 				durationMessage = durationMessage + element.duration;
 				let stringDiv = "";
 				// Type = text
-				if (element.type == "text" || element.type == "question" || element.type == "keyend") {
+				if (element.type == "text" || element.type == "question" || element.type == keyState) {
 					stringDiv = '<div class="chat-message-left pb-2" style="width: 76%">' +
 						'<div>' + tempImgDiv +
 						'</div >' +
@@ -471,7 +484,7 @@
 				new_item.delay(durationMessage).fadeToggle();
 				setTimeout(function () {
 					scrollBottom();
-					if (element.type == "keyend") {
+					if (element.type == keyState) {
 						setFallingContailer();
 						openAudio();
 						openBackgroundGradient();
@@ -551,7 +564,6 @@
 			//TweenLite.set("img",{xPercent:"-10%",yPercent:"-10%"})
 
 
-			console.log(TweenLite);
 
 			var total = 10;
 			var container = document.getElementById("container"),
